@@ -7,7 +7,8 @@ An expression parser in JavaScript
 
 # Usage
 
-For now write your expressions in the `str` variable and run `node ./`
+
+For now write your expressions in the `str` variable and run `node ./index.js`
 
 # Expressions supported
 
