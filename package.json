@@ -1,12 +1,12 @@
 {
-  "name": "expr_parser",
-  "version": "1.0.0",
-  "description": "",
-  "main": "ast.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Chidume Nnamdi <kurtwanger40@gmail.com>",
-  "license": "ISC"
+    "name": "expr_parser",
+    "version": "1.0.0",
+    "description": "",
+    "main": "i.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Chidume Nnamdi <kurtwanger40@gmail.com>",
+    "license": "ISC"
 }
