@@ -22,6 +22,11 @@ class Token {
                 s = ''
             }
 
+            if (s.trim() == '(' || s.trim() == ')') {
+                s.trim() == '(' ? this.tokens.push({ type: 'LPAREN' }) : this.tokens.push({ type: 'RPAREN' })
+                s = ''
+            }
+
             /**
              * This `if` statement is not in use
              */

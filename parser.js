@@ -1,5 +1,5 @@
 const { Token } = require('./token.js')
-const { Binary, Literal } = require('./ast.js')
+const { Binary, Literal, Grouping } = require('./ast.js')
 const log = console.log
 
 /**
@@ -109,10 +109,16 @@ class Parser {
         this.advance()
         if (curr.type == 'NUM')
             return new Literal(curr.value)
+        if (curr.type == 'LPAREN') {
+            const expr = this.add()
+            this.advance()
+            return new Grouping(expr)
+        }
 
         // return curr
         // return null
     }
+
 }
 
 exports.Parser = Parser

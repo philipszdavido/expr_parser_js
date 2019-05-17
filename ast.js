@@ -20,5 +20,15 @@ class Literal {
     }
 }
 
+class Grouping {
+    constructor(expr) {
+        this.expr = expr
+    }
+    visit(visitor) {
+        return visitor.visitGrouping(this)
+    }
+}
+
 exports.Binary = Binary
 exports.Literal = Literal
+exports.Grouping = Grouping

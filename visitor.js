@@ -42,6 +42,12 @@ class Visitor {
         return Number(ctx.value)
     }
 
+    visitGrouping(expr) {
+        const e = expr.expr
+            // log(expr)
+        return e.visit(this)
+    }
+
     visitExpressions(expressions) {
         for (const expr of expressions) {
             log(expr.visit(this))
