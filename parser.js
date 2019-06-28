@@ -50,7 +50,7 @@ class Parser {
             // log(': ', this.current())
         if (this.current().value == '+') {
             this.advance()
-            return new Binary(left, 'ADD', this.add())
+            return new Binary(left, 'ADD', this.sub())
                 // return { left, type: 'ADD', right: this.add() }
         }
         return left
@@ -60,7 +60,7 @@ class Parser {
         const left = this.mul()
         if (this.current().value == '-') {
             this.advance()
-            return new Binary(left, 'SUB', this.add())
+            return new Binary(left, 'SUB', this.mul())
                 // return { left, type: 'SUB', right: this.add() }
         }
         return left
@@ -70,7 +70,7 @@ class Parser {
         const left = this.all()
         if (this.current().value == '*') {
             this.advance()
-            return new Binary(left, 'MUL', this.add())
+            return new Binary(left, 'MUL', this.all())
                 // return { left, type: 'MUL', right: this.add() }
         }
         return left

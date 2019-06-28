@@ -1,6 +1,7 @@
 const { Parser } = require('./parser.js')
 const { Visitor } = require('./visitor.js')
 const { Evaluator } = require('./evaluator.js')
+const repl = require('repl')
 
 const log = console.log;
 
@@ -16,10 +17,21 @@ const str = `
     (45*89)+90
     4-5+6
     4-(5+6)
+    6*8+9
 `
 
+function executeExpr(cmd) {
+    const asts = Parser.getInst().parse(cmd)
 
-const asts = Parser.getInst().parse(str)
+    //log(asts)
+    new Evaluator(asts).evaluate()
 
-//log(asts)
-new Evaluator(asts).evaluate()
+}
+
+repl.start({
+    prompt: '>> ',
+    eval: (cmd) => {
+        executeExpr(cmd)
+        log('\n')
+    }
+})

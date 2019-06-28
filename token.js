@@ -58,5 +58,5 @@ class Token {
     }
 }
 
-exports.Token = Token
+
 exports.Token = Token
